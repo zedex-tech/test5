@@ -1,0 +1,277 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "LoremIpsum-Regular";
+  src: url("../fonts/LoremIpsum-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/LoremIpsum-Regular.otf") format("opentype"), url("../fonts/LoremIpsum-Regular.woff") format("woff"), url("../fonts/LoremIpsum-Regular.ttf") format("truetype"), url("../fonts/LoremIpsum-Regular.svg#MyriadPro-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'fontello';
+  src: url("../fonts/font-icon/fontello.eot?74737614");
+  src: url("../fonts/font-icon/fontello.eot?74737614#iefix") format("embedded-opentype"), url("../fonts/font-icon/fontello.woff2?74737614") format("woff2"), url("../fonts/font-icon/fontello.woff?74737614") format("woff"), url("../fonts/font-icon/fontello.ttf?74737614") format("truetype"), url("../fonts/font-icon/fontello.svg?74737614#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?74737614#fontello') format('svg');
+  }
+}
+*/
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: auto;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-er-drag:before {
+  content: '\e800';
+}
+
+/* '' */
+.d-none {
+  display: none !important;
+}
+
+.invisible {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  transition: all .2s ease-in-out;
+}
+
+.er-text-fix {
+  pointer-events: none;
+  color: #fff !important;
+}
+
+@keyframes pulse {
+  from {
+  }
+  to {
+  }
+}
+
+.er-slider {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.er-slider *, .er-slider *::after, .er-slider *::before {
+  box-sizing: border-box;
+}
+
+.er-slider p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  text-align: center;
+  line-height: 1.2rem;
+  color: #333;
+  margin: 0;
+  z-index: 10;
+}
+
+@media (max-width: 767.98px) {
+  .er-slider p {
+    font-size: 16px;
+    line-height: 1.1rem;
+  }
+}
+
+.er-slider .icon-er-drag {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.er-slider .er-brand-box, .er-slider .er-self-box {
+  max-width: 300px;
+}
+
+@media (max-width: 767.98px) {
+  .er-slider .er-brand-box, .er-slider .er-self-box {
+    max-width: 35vw;
+  }
+}
+
+.er-slider .er-self-box.active .er-self, .er-slider .er-self-box.active p {
+  opacity: .6;
+}
+
+.er-slider .er-self-box > p {
+  position: relative;
+  background: #fff;
+  z-index: 100;
+}
+
+.er-slider .er-self-box > p::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.5) 100%);
+  transform: translateX(100%);
+}
+
+.er-slider .er-brand, .er-slider .er-self {
+  position: relative;
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+  margin: 20px 0;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+}
+
+@media (max-width: 767.98px) {
+  .er-slider .er-brand, .er-slider .er-self {
+    width: 35vw;
+    height: 35vw;
+  }
+}
+
+.er-slider .er-brand img, .er-slider .er-self img {
+  position: absolute;
+  width: 100%;
+}
+
+.er-slider .er-brand p, .er-slider .er-self p {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  font-size: 22px;
+  text-align: center;
+  line-height: 1.4rem;
+  color: #333;
+  background: transparent;
+  margin: 0;
+}
+
+@media (max-width: 767.98px) {
+  .er-slider .er-brand p, .er-slider .er-self p {
+    font-size: 16px;
+    line-height: 1.1rem;
+  }
+}
+
+@media (max-width: 419.98px) {
+  .er-slider .er-brand p, .er-slider .er-self p {
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+  }
+}
+
+.er-slider .er-brand .img-fluid, .er-slider .er-self .img-fluid {
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+
+.er-slider .er-self {
+  background-size: 100%;
+  border: 10px solid #abbeba;
+  box-shadow: 8px 0 16px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  z-index: 100;
+}
+
+@media (max-width: 767.98px) {
+  .er-slider .er-self {
+    border: 5px solid #abbeba;
+  }
+}
+
+.er-slider .er-self::before {
+  background: #abbeba;
+}
+
+.er-slider .er-self img {
+  padding: 10px;
+  border-radius: 50%;
+  z-index: 100;
+}
+
+@media (max-width: 419.98px) {
+  .er-slider .er-self img {
+    padding: 5px;
+  }
+}
+
+.er-slider .er-self p {
+  padding: 0;
+}
+
+.er-slider .er-brand {
+  background-size: 70%;
+  border: 10px solid #c3ced0;
+  pointer-events: none;
+}
+
+@media (max-width: 767.98px) {
+  .er-slider .er-brand {
+    border: 5px solid #c3ced0;
+  }
+}
+
+.er-slider .er-brand::before {
+  background: #c3ced0;
+}
+
+.er-slider .er-brand img {
+  padding: 18%;
+  border-radius: 0;
+  z-index: 50;
+}
+
+.er-icon {
+  opacity: .2;
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  line-height: 1;
+}
+
+@media (max-width: 767.98px) {
+  .er-icon {
+    font-size: 35px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
